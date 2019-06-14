@@ -1,0 +1,280 @@
+@charset "utf-8";
+@import "mixins.scss";
+@import url(../fonts/sfuidisplay-thin.css);
+@import url(../fonts/sfuidisplay-light.css);
+@import url(../fonts/sfuidisplay-regular.css);
+@import url(../fonts/sfuidisplay-heavy.css);
+
+$darkblue: #302f60;
+$deepblue: #292852;
+
+
+body{
+	font-family: 'SFUIDisplay-Regular';
+	-webkit-text-size-adjust: none;
+}
+
+@media (min-width: 1500px) {
+	.container {
+	    max-width: 1368px;
+	}
+}
+
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+
+	&.flex-justi {
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	}
+	&.flex-valign {
+		-webkit-align-items: center;
+		align-items: center;
+		height: 100%;
+	}
+	&.flex-align {
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	}
+	&.flex-nowrap {
+		flex-wrap: nowrap;
+	}
+	&.flex-end {
+		-webkit-justify-content: flex-end;
+		justify-content: flex-end;
+	}
+	&.flex-center {
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, strong, ins {
+	font-weight: normal!important;
+}
+
+.child-full--height {
+	> div {
+		height: 100%;
+	}
+}
+.child-full--width {
+	> div {
+		width: 100%;
+	}
+}
+
+#post_form {
+	position: absolute;
+	opacity: 0;
+	z-index: -99;
+	pointer-events: none;
+	width: 0;
+	height: 0;
+}
+
+.site-overlay {
+	position: fixed;
+	background: rgba(0,0,0, .55);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.header {
+	height: 65px;
+	background: #999;
+
+	.flex > .row {
+		padding: 0 20px;
+	}
+
+	.menu-btn {
+		background: transparent;
+		border: none;
+		margin-right: 20px;
+	}
+
+	.logo {
+		font-size: 30px;
+		color: #fff;
+		text-transform: uppercase;
+
+		span {
+			font-family: 'SFUIDisplay-Thin';
+		}
+	}
+
+	.user {
+
+		&__icon {
+			max-width: 34px;
+			max-height: 34px;
+		}
+
+		&__name {
+			color: #fff;
+			font-size: 16px;
+			max-width: 180px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			margin-left: 15px;
+			padding-right: 25px;
+			position: relative;
+
+			&:after {
+				content: '';
+				background: url('../img/blue_down_arrow.svg');
+				background-repeat: no-repeat;
+				width: 16px;
+				height: 9px;
+				position: absolute;
+				top: 50%;
+				margin-top: -4px;
+				right: 2px;
+			}
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+.main-section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.content {
+		padding: 50px 40px;
+	}
+
+	.main-section-window {
+		min-height: calc(100% - 65px);
+	}
+
+	h1 {
+		color: #334666;
+		font-size: 36px;
+		font-family: 'SFUIDisplay-Light';
+		margin-bottom: 30px;
+	}
+
+	p {
+		font-size: 16px;
+		color: #87888a;
+		line-height: 20px;
+		margin: 0 0 10px 0;
+		max-width: 70%;
+	}
+
+	a {
+		color: #3e36c4;
+	}
+}
+
+// сайдбар
+.sidebar {
+	padding-top: 25px;
+	background-color: $darkblue;
+	width: 230px;
+	min-width: 230px;
+
+	a {
+		height: 50px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
+		padding: 5px 10px 5px 50px;
+		width: 100%;
+		color: #fff;
+		font-size: 16px;
+		border-bottom: 1px solid transparent;
+
+		&:before {
+			content: '';
+			background: url('../img/books.svg');
+			background-repeat: no-repeat;
+			width: 22px;
+			height: 22px;
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			margin-top: -11px;
+		}
+
+		&.active {
+			background: $deepblue;
+			border-bottom-color: #4e4e66;
+		}
+	}
+}
+// блок нет аккаунтов
+.empty-accounts {
+	margin: 50px 0 100px 0;
+
+	&__gray {
+		height: 250px;
+		background: #eceded;
+	}
+
+	p {
+		font-size: 28px;
+		color: #9c9e9f;
+		font-family: 'SFUIDisplay-Light';
+	}
+
+	.add-account-btn {
+		background: url('../img/add_account_btn.svg');
+		border: none;
+		width: 300px;
+		height: 86px;
+		display: inline-block;
+		position: absolute;
+		bottom: -44px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+}
