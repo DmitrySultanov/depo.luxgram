@@ -3,22 +3,43 @@
 @import url(../fonts/sfuidisplay-thin.css);
 @import url(../fonts/sfuidisplay-light.css);
 @import url(../fonts/sfuidisplay-regular.css);
+@import url(../fonts/sfuidisplay-bold.css);
 @import url(../fonts/sfuidisplay-heavy.css);
 
 $darkblue: #302f60;
 $deepblue: #292852;
-
 
 body{
 	font-family: 'SFUIDisplay-Regular';
 	-webkit-text-size-adjust: none;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 576px) {
 	.container {
-	    max-width: 1368px;
+	    max-width: 100%;
 	}
 }
+@media (min-width: 768px) {
+	.container {
+	    max-width: 100%;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+	    max-width: 100%;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+	    max-width: 100%;
+	}
+}
+@media (min-width: 1500px) {
+	.container {
+	    max-width: 1400px;
+	}
+}
+
 
 .flex {
 	display: -webkit-box;
@@ -48,11 +69,18 @@ body{
 		-webkit-justify-content: flex-end;
 		justify-content: flex-end;
 	}
-	&.flex-center {
+	&.flex-center-center {
 		-webkit-justify-content: center;
 		justify-content: center;
 		-webkit-align-items: center;
 		align-items: center;
+	}
+	&.flex-center {
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	&.flex-column {
+		flex-direction: column;
 	}
 }
 
@@ -62,6 +90,7 @@ body{
 
 a {
 	text-decoration: none;
+	outline: none;
 
 	&:hover {
 		text-decoration: none;
@@ -79,8 +108,147 @@ img {
 	-moz-box-sizing: border-box;
 }
 
+button, a {
+	outline: none!important;
+}
+
+p {
+	line-height: 1.1;
+}
+
 h1, h2, h3, h4, h5, h6, strong, ins {
 	font-weight: normal!important;
+}
+
+h1 {
+	font-size: 36px;
+	color: #3e36c4;
+	font-family: 'SFUIDisplay-Light';
+	letter-spacing: normal;
+    margin: auto;
+}
+
+h2 {
+	font-size: 24px;
+	color: #1a171b;
+	font-family: 'SFUIDisplay-Light';
+	letter-spacing: normal;
+    margin: auto;
+}
+
+.blue-btn {
+	background: #2d6dda; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2d6dda 0%, #3d23c8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #2d6dda 0%,#3d23c8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #2d6dda 0%,#3d23c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d6dda', endColorstr='#3d23c8',GradientType=0 ); /* IE6-9 */
+	border: none;
+	color: #fff!important;
+	border-radius: 30px;
+	font-size: 16px;
+	transition: .2s;
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px;
+	position: relative;
+
+	&:active {
+		position: relative;
+		top: 2px;
+		box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.8);
+	}
+
+	&:hover {
+		background: #3d23c8; /* Old browsers */
+		background: -moz-linear-gradient(top,  #3d23c8 0%, #2d6dda 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #3d23c8 0%,#2d6dda 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #3d23c8 0%,#2d6dda 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d23c8', endColorstr='#2d6dda',GradientType=0 ); /* IE6-9 */
+	}
+
+	&.btn-large {
+		font-size: 22px;
+	}
+
+	&.question-btn {
+		width: 188px;
+		height: 54px;
+	}
+
+	&.add-account-btn {
+		width: 300px;
+		height: 86px;
+		text-align: center;
+	    border-radius: 50px;
+	    line-height: 66px;
+	    padding-left: 50px;
+
+	    &:before {
+			content: '';
+			background: url('../img/finger_print.svg');
+			@include background-size(contain);
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 50%;
+			margin-top: -20px;
+			left: 24px;
+			background-repeat: no-repeat;
+	    }
+
+	    &:after {
+	    	content: '';
+	    	background: url('../img/btn_shadow.png');
+	    	@include background-size(contain);
+	    	width: 314px;
+	    	height: 50px;
+	    	position: absolute;
+	    	bottom: -50px;
+	    	left: -7px;
+	    	background-repeat: no-repeat;
+	    }
+
+	    &:active:after {
+			margin-top: -48px;
+	    }
+
+	    &.btn-md {
+			width: 226px;
+			height: 65px;
+			font-size: 18px;
+			line-height: 45px;
+
+			&:before {
+				width: 30px;
+				height: 32px;
+				margin-top: -16px;
+				left: 18px;
+			}
+
+			&:after {
+				width: 240px;
+				height: 46px;
+			}
+		}
+	}
+}
+
+.badge {
+	font-size: 11px;
+	color: #fff;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: #d40050;
+	line-height: 20px;
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    margin: 0 5px;
+}
+
+.popover-content {
+	display: none;
 }
 
 .child-full--height {
@@ -115,7 +283,9 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 
 .header {
 	height: 65px;
-	background: #999;
+	background: url('../img/header-bg.jpg');
+	background-position: center;
+    background-repeat: no-repeat;
 
 	.flex > .row {
 		padding: 0 20px;
@@ -176,12 +346,6 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 }
 
 .main-section {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-
 	.content {
 		padding: 50px 40px;
 	}
@@ -190,9 +354,20 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 		min-height: calc(100% - 65px);
 	}
 
+	.title-block {
+		
+		.add-account-btn {
+			position: absolute;
+			top: -10px;
+			right: 10px;
+
+			&:active {
+				top: -8px;
+			}
+		}
+	}
+
 	h1 {
-		color: #334666;
-		font-size: 36px;
 		font-family: 'SFUIDisplay-Light';
 		margin-bottom: 30px;
 	}
@@ -205,17 +380,18 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 		max-width: 70%;
 	}
 
-	a {
+	p a {
 		color: #3e36c4;
 	}
 }
 
 // сайдбар
 .sidebar {
-	padding-top: 25px;
+	padding: 25px 0;
 	background-color: $darkblue;
 	width: 230px;
 	min-width: 230px;
+	min-height: calc(100vh - 65px);
 
 	a {
 		height: 50px;
@@ -231,6 +407,7 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 		color: #fff;
 		font-size: 16px;
 		border-bottom: 1px solid transparent;
+		font-family: 'SFUIDisplay-Light';
 
 		&:before {
 			content: '';
@@ -252,7 +429,7 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 }
 // блок нет аккаунтов
 .empty-accounts {
-	margin: 50px 0 100px 0;
+	margin: 40px 0 80px 0;
 
 	&__gray {
 		height: 250px;
@@ -263,18 +440,154 @@ h1, h2, h3, h4, h5, h6, strong, ins {
 		font-size: 28px;
 		color: #9c9e9f;
 		font-family: 'SFUIDisplay-Light';
+		text-align: center;
+		line-height: 1.2;
 	}
 
 	.add-account-btn {
-		background: url('../img/add_account_btn.svg');
-		border: none;
-		width: 300px;
-		height: 86px;
-		display: inline-block;
 		position: absolute;
 		bottom: -44px;
 		left: 0;
 		right: 0;
 		margin: auto;
+		color: #fff;
+
+		&:active {
+			position: absolute;
+			bottom: -46px;
+			top: auto;
+		}
+	}
+}
+
+.accounts-wrapper {
+	margin-top: 30px;
+
+	h2 {
+		margin: 15px 0;
+	}
+}
+
+.accounts-list {
+
+	.account {
+		border: 1px solid #e2e3e4;
+		height: 192px;
+		padding: 20px 35px;
+		margin-bottom: 6px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		@include background-size(cover);
+		background-position: center;
+
+		&:hover {
+			background-image: url('../img/account_hover_bg.jpg');
+			color: #fff;
+
+			.account__info .ai-block {
+				border-left-color: #d0ddee;
+			}
+
+			.context-btn {
+				color: #fff;
+
+				&:hover {
+					background: #4d4c4c;
+				}
+			}
+		}
+
+		.context-btn {
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			color: #9c9e9f;
+			font-size: 14px;
+			background: transparent;
+			text-align: center;
+
+			&:hover {
+				background: #eee;
+			}
+		}
+
+		&__user {
+
+			.user-name {
+				margin-left: 25px;
+			}
+
+			img {
+				min-width: 100px;
+				width: 100px;
+			}
+
+			.nickname {
+				font-size: 24px;
+				font-family: 'SFUIDisplay-Bold';
+			}
+
+			.user-descr {
+				font-size: 16px;
+			}
+		}
+
+		&__info {
+			
+			.ai-block {
+				max-width: 150px;
+				text-align: center;
+				font-size: 16px;
+				padding: 0 22px;
+				border-left: 2px dotted #9c9d9e;
+
+				&:first-child {
+					border-left: none;
+				}
+
+				&__counts {
+					font-size: 34px;
+					line-height: 36px;
+				}
+			}
+		}
+	} 
+}
+
+.login-system {
+	background-image: url('../img/start_bg.jpg');
+	width: 100%;
+	height: 100vh;
+	min-height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	@include background-size(cover);
+
+	.header {
+		background: none;
+	}
+
+	.login-container {
+
+	}
+
+	.login-form {
+		background: #fff;
+		padding: 40px 28px;
+		border-radius: 10px;
+		max-width: 450px;
+
+		h1 {
+			font-family: 'SFUIDisplay-Regular';
+		}
 	}
 }

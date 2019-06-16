@@ -9,69 +9,11 @@ $(document).ready(function(){
 	  return this.optional( element ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@(?:\S{1,63})$/.test( value );
 	}, 'Введите корректную почту');
 
-	jQuery.validator.setDefaults({
-		errorLabelContainer: '<div>',
-		highlight: function(element, errorClass, validClass){
-
-			if(element.type === 'radio'){
-				this.findByName(element.name)
-				.addClass(errorClass)
-				.removeClass(validClass);
-			}
-
-			else{
-				$(element)
-				.addClass(errorClass)
-				.removeClass(validClass);
-			}
-
-			var elements = $(element).closest(['.element', '.input']);
-
-			$.map(elements, function(element){
-				$(element.elem).addClass(errorClass)
-				.removeClass(validClass);
-			});
-		},
-
-		unhighlight: function(element, errorClass, validClass){
-			if (element.type === 'radio'){
-				this.findByName(element.name)
-				.removeClass(errorClass)
-				.addClass(validClass);
-			}
-
-			else{
-				$(element)
-				.removeClass(errorClass)
-				.addClass(validClass);
-			}
-
-			var elements = $(element).closest(['.element', '.input']);
-
-			$.map(elements, function(element){
-				$(element.elem).addClass(validClass)
-				.removeClass(errorClass);
-			});
-		},
-
-		invalidHandler: function(event, validator){
-			$.map(validator.errorList, function(item){
-				var $element = $(item.element);
-				var placeholder = $element.attr('placeholder');
-
-				$element.attr('placeholder', item.message);
-
-				$element.one('focus', function(){
-					$element.attr('placeholder', placeholder);
-				});
-			});
-		}
-	});
-
 	// Валидация
-	$('.form form').each(function(){
+	$('.form-validate').each(function(){
 		var $this = $(this);
-        var $thanks =  $this.parent().siblings('.thanks');
+        var $successModal =  $('.sended-modal.success');
+        var $errorModal =  $('.sended-modal.error');
 
 		// Валидация формы
 		$this.validate({
@@ -126,15 +68,13 @@ $(document).ready(function(){
 		$this.submit(function(){
 
 			if($this.valid()){
-				$this.parent('.form').hide();
-				// // $thanks.css('display' ,'block');
-				$('.overlay').fadeIn();
-				$thanks.fadeIn();
-
-				$('.close, .overlay, .ok').click(function(){
-					$('.overlay').fadeOut();
-					$('.thanks').fadeOut();
-				});
+				$('body').css('overflow', 'hidden');
+				$successModal.fadeIn();
+				setTimeout(function(){
+					$this.find('input, textarea').removeClass('error');
+					$this.find('.mdl-textfield--floating-label').removeClass('is-dirty is-focused');
+					$this.trigger('reset');
+				}, 200);
 			}
 		});
 	});
