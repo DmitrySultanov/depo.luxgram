@@ -13,12 +13,28 @@ $(document).ready(function(){
 	    }
 	});
 
-  	$('[data-toggle="popover-html"]').popover({
-	    container: 'body',
-	    html: true,
-		content: function() {
-		    var id = $(this).attr('id')
-		    return $('#po' + id).html();
-		}
+	$(function () {
+	  	$('[data-toggle="tooltip"]').tooltip();
+
+	  	$('[data-toggle="popover-html"]').popover({
+		    container: 'body',
+		    html: true,
+			content: function() {
+			    var id = $(this).attr('id');
+			    return $('#po' + id).html();
+			}
+	  	});
+
+	  	$('[data-toggle="popover-html"]').on('inserted.bs.popover', function () {
+		  $('[data-toggle="tooltip"]').tooltip();
+		})
+	});
+
+  	$(function (){
+  		$('.js-account-overlay').on('click', function (e){
+  			e.preventDefault();
+
+  			$(this).parent().toggleClass('active');
+  		});
   	});
 });

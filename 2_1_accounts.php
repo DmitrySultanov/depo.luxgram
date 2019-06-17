@@ -63,7 +63,9 @@
 									<div class="accounts-list">
 
 										<div class="account">
+											<a href="#" class="js-account-overlay"></a>
 											<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+
 											<div class="account__user flex flex-valign">
 												<img src="assets/img/account_user1.png" alt=""/>
 												<div class="user-name">
@@ -85,10 +87,22 @@
 													<div class="ai-block__txt">Подписки</div>
 												</div>
 											</div>
+
+											<div class="account-action-buttons flex">
+												<a href="#" class="action-btn btn send-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn subscribe-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn resubscribe-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn automessage-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn autocomment-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn hello-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-title="title"></a>
+											</div>
 										</div>
 
-										<div class="account">
+										<div class="account js-account">
+											<a href="#" class="js-account-overlay"></a>
 											<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+
 											<div class="account__user flex flex-valign">
 												<img src="assets/img/account_user2.png" alt=""/>
 												<div class="user-name">
@@ -110,6 +124,15 @@
 													<div class="ai-block__txt">Подписки</div>
 												</div>
 											</div>
+											<div class="account-action-buttons flex">
+												<a href="#" class="action-btn btn send-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn subscribe-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn resubscribe-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn automessage-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn autocomment-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn hello-btn" data-toggle="tooltip" data-title="title"></a>
+												<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-title="title"></a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -122,21 +145,15 @@
 	</div>
 	<div class="popover-content"> 
 		<div id="popover-card">
-			<div class="card text-center">
-				<div class="card-header bg-warning text-white h3">
-					Popover Card
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">Special title treatment</h4>
-					<p class="card-text">Using data-trigger="focus" causes the popover to close when you click away. Options are hover|focus|click</p>
-					<a href="#" class="btn btn-secondary">Go somewhere</a>
-				</div>
-				<div class="card-footer text-muted bg-warning text-right">
-					<small class="text-white">
-						2 days ago
-					</small>
-				</div>
-			</div>	
+			<div class="account-action-buttons flex">
+				<a href="#" class="action-btn send-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn subscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn resubscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn automessage-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn autocomment-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn hello-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+				<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			</div>
 		</div>
 	</div>
 	<footer></footer>

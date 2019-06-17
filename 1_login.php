@@ -28,17 +28,24 @@
 								<input type="text" autocomplete="off" name="E-mail" class="required email mdl-textfield__input" data-msg-required="Заполните поле">
 								<label class="mdl-textfield__label" for="E-mail">E-mail</label>
 							</div>
-							<div class="flex flex-nowrap">
-								<div class="element mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-									<input type="text" id="phone" name="password" class="phone required mdl-textfield__input" data-msg-required="Заполните поле">
+							<div class="flex flex-nowrap flex-valign flex-justi">
+								<div class="password-elem element mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="password" id="password" name="password" class="required mdl-textfield__input" data-msg-required="Заполните поле">
 									<label class="mdl-textfield__label" for="password">Пароль</label>
 								</div>
 								<a href="#" class="forgot-password">Забыли пароль?</a>
 							</div>
 						</fieldset>
 						<input type="hidden" name="hidden" value="Форма luxgram">
-						<button type="submit" class="blue-btn btn-md add-account-btn">Войти в кабинет</button>
+						<div class="buttons flex flex-justi">
+							<button type="submit" class="blue-btn btn-md add-account-btn">Войти в кабинет</button>
+							<div>
+								<a href="#" class="fb"></a>
+								<a href="#" class="vk"></a>
+							</div>
+						</div>
 					</form>
+					<p>Вы еще не зарегистрировались? <a href="#" class="reg-link">Регистрация</a></p>
 				</div>
 			</div>
 		</section>

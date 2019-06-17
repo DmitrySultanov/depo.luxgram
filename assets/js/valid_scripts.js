@@ -42,7 +42,7 @@ $(document).ready(function(){
 				},
 				password: {
 					required: "Пожалуйста введите пароль",
-					minlength: "Придумайте пароль длиннее 5 символов"
+					minlength: ""
 				},
 				confirm_password: {
 					required: "Пожалуйста повторите пароль",
