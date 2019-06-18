@@ -9,36 +9,16 @@
 $darkblue: #302f60;
 $deepblue: #292852;
 $blue: #3e36c4;
+$gray: #87888a;
 
 body{
 	font-family: 'SFUIDisplay-Regular';
 	-webkit-text-size-adjust: none;
 }
 
-@media (min-width: 576px) {
-	.container {
-	    max-width: 100%;
-	}
-}
-@media (min-width: 768px) {
-	.container {
-	    max-width: 100%;
-	}
-}
-@media (min-width: 992px) {
-	.container {
-	    max-width: 100%;
-	}
-}
-@media (min-width: 1200px) {
-	.container {
-	    max-width: 100%;
-	}
-}
-@media (min-width: 1500px) {
-	.container {
-	    max-width: 1400px;
-	}
+.in-container {
+	width: 980px;
+	margin: auto;
 }
 
 html {
@@ -119,7 +99,7 @@ button, a {
 }
 
 p {
-	line-height: 1.1;
+	line-height: 1.2;
 }
 
 h1, h2, h3, h4, h5, h6, strong, ins {
@@ -327,6 +307,7 @@ h2 {
 	background: url('../img/header-bg.jpg');
 	background-position: center;
     background-repeat: no-repeat;
+    padding: 0 15px;
 
 	.flex > .row {
 		padding: 0 20px;
@@ -389,6 +370,22 @@ h2 {
 .main-section {
 	.content {
 		padding: 50px 40px;
+		width: 100%;
+		width: calc(100% - 230px);
+
+		&.gray--background {
+			padding: 0;
+			background: #eceded;
+
+			.content-top-sector {
+				background: #fff;
+				padding: 50px 40px 0 40px;
+			}
+
+			.content-bottom-sector {
+				padding: 0px 40px 50px 40px;
+			}
+		}
 	}
 
 	.main-section-window {
@@ -415,7 +412,7 @@ h2 {
 
 	p {
 		font-size: 16px;
-		color: #87888a;
+		color: $gray;
 		line-height: 20px;
 		margin: 0 0 10px 0;
 		max-width: 70%;
@@ -469,11 +466,11 @@ h2 {
 	}
 }
 // блок нет аккаунтов
-.empty-accounts {
+.gray-container {
 	margin: 40px 0 80px 0;
 
-	&__gray {
-		height: 250px;
+	&__inner {
+		min-height: 250px;
 		background: #eceded;
 	}
 
@@ -498,11 +495,19 @@ h2 {
 			bottom: -46px;
 			top: auto;
 		}
+
+		&.btn-md {
+			bottom: -30px;
+
+			&:active {
+				bottom: -32px;
+			}
+		}
 	}
 }
 
 .accounts-wrapper {
-	margin-top: 30px;
+	margin-top: 20px;
 
 	h2 {
 		margin: 15px 0;
@@ -526,8 +531,9 @@ h2 {
 		@include background-size(cover);
 		background-position: center;
 		@include transition(ease-in-out .5s);
+		background-color: #fff;
 
-		.js-account-overlay {
+		> a {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -784,4 +790,164 @@ h2 {
 
 .popover > *{
 	overflow: auto;
+}
+
+// выбор тарифа
+.choose-tariff {
+	width: 360px;
+	text-align: center;
+	padding-bottom: 40px;
+
+	.choose-tariff__title {
+		font-size: 24px;
+		color: #1a171b;
+		font-family: 'SFUIDisplay-Light';
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 16px;
+		color: $gray;
+		line-height: 20px;
+		max-width: 100%;
+	}
+
+	.calc-table {
+		margin-bottom: 30px;
+
+		.column {
+			width: 33.3%;
+			border-left: 2px dotted #b6b7b7;
+
+			&:first-child {
+				border-left: none;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+
+			.base-price {
+				position: relative;
+
+				&:after {
+					content: '';
+					width: 100%;
+					height: 1px;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					right: 0;
+					background: red;
+				}
+			}
+
+			&__head {
+				height: 40px;
+			}
+
+			&__count {
+				font-size: 34px;
+				color: $blue;
+				line-height: 40px;
+			}
+		}
+	}
+
+	.irs--flat {
+
+		.irs-line {
+			height: 4px;
+			background-color: $gray;
+		}
+
+		.irs-bar {
+			height: 4px;
+			background-color: #1a171b;
+		}
+
+		.irs-single {
+			top: -5px;
+			background-color: $gray;
+
+			&:before {
+				border-top-color: $gray;
+			}
+		}
+
+		.irs-grid {
+			bottom: 11px;
+		}
+
+		.irs-grid-pol {
+			background: $gray;
+			opacity: 1;
+		}
+
+		.irs-grid-text {
+			display: none;
+		}
+
+		.irs-handle {
+			width: 25px;
+			height: 26px;
+			background-image: url('../img/irs_ball.png');
+			top: 14px;
+			cursor: pointer;
+
+			i {
+				display: none!important;
+			}
+		}
+	}
+}
+
+.tabs {
+	margin-top: 40px;
+
+	li {
+		border-left: 1px dotted $gray;
+
+		&:first-child {
+			border-left: none;
+		}
+
+		a {
+			display: block;
+			font-size: 16px;
+			color: $blue;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 10px 15px;
+			position: relative;
+
+			&:after {
+				content: '';
+				border: 10px solid transparent;
+				border-top-color: #3c006d;
+				width: 0;
+				position: absolute;
+				bottom: -20px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				display: none;
+			}
+		}
+
+		&.active {
+			a {
+				background: #3c006d;
+				color: #fff;
+
+				&:after {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.stepper-wrap {
+	width: 370px;
 }

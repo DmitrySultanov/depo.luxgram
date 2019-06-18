@@ -37,4 +37,36 @@ $(document).ready(function(){
   			$(this).parent().toggleClass('active');
   		});
   	});
+
+  	function calcTariff (){
+  		var basePrice = 500;
+  		var	sale = 100;
+
+		$(".js-range-slider").ionRangeSlider({
+			min: 1,
+	        max: 12,
+	        grid: true,
+	        step: 1,
+	        grid_num: 6,
+		}).on("change", function () {
+	        var $inp = $(this);
+	        var month = $inp.prop("value");
+	    	calcTariffPrice (month);
+	    });
+	    
+
+  		function calcTariffPrice (month){
+  			$('.js-choose-tariff .js-monthCount span').text(month);
+  		}
+  	};
+  	calcTariff();
+
+
+  	$(function (){
+  		$('#stepper').slider({
+  			min: 1,
+  			max: 6,
+  			step: 1
+  		});
+  	});
 });
