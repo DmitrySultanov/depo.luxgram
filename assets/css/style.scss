@@ -114,7 +114,7 @@ h1 {
     margin: auto;
 }
 
-h2 {
+h2, .subtitle {
 	font-size: 24px;
 	color: #1a171b;
 	font-family: 'SFUIDisplay-Light';
@@ -122,6 +122,7 @@ h2 {
     margin: auto;
 }
 
+// buttons
 .blue-btn {
 	background: #2d6dda; /* Old browsers */
 	background: -moz-linear-gradient(top,  #2d6dda 0%, #3d23c8 100%); /* FF3.6-15 */
@@ -218,7 +219,6 @@ h2 {
 		}
 	}
 }
-
 .action-btn {
 	width: 30px;
 	height: 30px;
@@ -251,6 +251,55 @@ h2 {
 	}
 	&.watch-stories-btn {
 		background-image: url('../img/watch_stories_ico.svg');
+	}
+}
+.close-btn {
+	border: none;
+	background-color: transparent;
+	width: 20px;
+	height: 20px;
+	background-image: url('../img/close_ico.svg');
+	display: inline-block;
+	text-decoration: none;
+}
+.sms-btn {
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	width: 135px;
+	height: 54px;
+	line-height: 34px;
+	padding-left: 40px;
+
+	&:before {
+		content: '';
+		background: url('../img/sms_ico_circle.svg');
+		position: absolute;
+		top: 50%;
+		margin-top: -15px;
+		width: 30px;
+		height: 30px;
+		left: 12px;
+	}
+}
+.mail-btn {
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	width: 135px;
+	height: 54px;
+	line-height: 34px;
+	padding-left: 40px;
+
+	&:before {
+		content: '';
+		background: url('../img/mail_ico_circle.svg');
+		position: absolute;
+		top: 50%;
+		margin-top: -15px;
+		width: 30px;
+		height: 30px;
+		left: 12px;
 	}
 }
 
@@ -474,14 +523,6 @@ h2 {
 		background: #eceded;
 	}
 
-	p {
-		font-size: 28px;
-		color: #9c9e9f;
-		font-family: 'SFUIDisplay-Light';
-		text-align: center;
-		line-height: 1.2;
-	}
-
 	.add-account-btn {
 		position: absolute;
 		bottom: -44px;
@@ -503,6 +544,15 @@ h2 {
 				bottom: -32px;
 			}
 		}
+	}
+}
+.empty-accounts-block {
+	p {
+		font-size: 28px;
+		color: #9c9e9f;
+		font-family: 'SFUIDisplay-Light';
+		text-align: center;
+		line-height: 1.2;
 	}
 }
 
@@ -542,7 +592,7 @@ h2 {
 			z-index: 22;
 		}
 
-		&:hover {
+		&:not(.account-no-hover):hover {
 			background-image: url('../img/account_hover_bg.jpg');
 
 			.account__info, .account__user {
@@ -586,20 +636,45 @@ h2 {
 
 			.user-name {
 				margin-left: 25px;
+				position: relative;
 			}
 
 			img {
 				min-width: 100px;
-				width: 100px;
+				max-width: 100px;
 			}
 
 			.nickname {
 				font-size: 24px;
 				font-family: 'SFUIDisplay-Bold';
+				line-height: 26px;
 			}
 
 			.user-descr {
 				font-size: 16px;
+				line-height: 20px;
+				margin-top: 4px;
+			}
+
+			.verify-btn {
+				font-size: 16px;
+				color: #d40050;
+				background: transparent;
+				border: 2px solid #d40050;
+				border-radius: 20px;
+				padding: 6px 15px;
+				position: absolute;
+				white-space: nowrap;
+				top: 100%;
+				margin: 5px 0 0 -10px;
+
+				&:hover {
+					background: #d40050;
+					color: #fff;
+				}
+				&:active {
+					margin-top: 6px;
+				}
 			}
 		}
 
@@ -661,6 +736,12 @@ h2 {
 				@include transform(translateY(0));
 				opacity: 1;
 			}
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 20px;
+			right: 20px;
 		}
 	} 
 }
@@ -729,6 +810,15 @@ h2 {
 
 		.password-elem {
 			width: 66%;
+
+			.fa {
+				position: absolute;
+			    top: 50%;
+			    right: 0;
+			    color: #707173;
+			    margin-top: -8px;
+			    cursor: pointer;
+			}
 		}
 
 		.forgot-password {
@@ -950,4 +1040,242 @@ h2 {
 
 .stepper-wrap {
 	width: 370px;
+}
+// ожидание якассы
+.waitbox {
+	max-width: 400px;
+	text-align: center;
+	padding: 7em 0;
+
+	p {
+		margin: auto;
+	}
+}
+
+.form-data {
+	max-width: 360px;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0 0;
+
+	.form-validate {
+		margin-top: 20px;
+	}
+
+	label.error {
+		font-size: 14px;
+		color: red;
+		margin-bottom: 0;
+	}
+
+	.element {
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		background: #fff;
+		height: 38px;
+		padding: 0 12px;
+		border: 1px solid transparent;
+		font-size: 16px;
+		color: #1a171b;
+
+		&.error {
+			border-color: red;
+		}
+
+		@include placeholder() {
+			color: #b1b3b4;
+		} 
+	}
+
+	.fa-question-circle {
+		margin-left: 4px;
+		color: $gray;
+		cursor: pointer;
+	}
+
+	.proxy-wrap {
+		margin: 25px 0 0;
+	}
+
+	.proxy-link {
+		font-size: 14px;
+		color: $blue;
+
+		i {
+			margin-right: 4px;
+		}
+
+		span {
+			border-bottom: 1px dashed;
+		}
+
+		&.active {
+			color: #1a171b;
+
+			i {
+				@include transform(rotate(90deg));
+			}
+		}
+	}
+
+	.blue-btn.btn-md {
+		position: relative;
+	}
+
+	.flex-cols {
+		>.element {
+			&:first-child {
+				width: 70%;
+				margin-right: 10px;
+			}
+			&:last-child {
+				width: 30%;
+			}
+		}
+	}
+
+	.proxy-block-hidden {
+		display: none;
+		margin-top: 25px;
+	}
+}
+
+
+// modals
+.white-popup-block {
+	padding: 40px 30px;
+
+	.close-btn {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+}
+
+.modal-sm {
+	max-width: 460px;
+	background: #fff;
+	margin: auto;
+	text-align: center;
+	
+	.subtitle {
+		margin-bottom: 15px;
+	}
+
+	p {
+		font-size: 16px;
+		color: $gray;
+	}
+}
+
+.verify-modal {
+
+	.buttons {
+		margin-top: 40px;
+
+		a {
+			margin: 0 7px;
+		}
+	}
+}
+
+.check-account-modal {
+
+	.form-validate {
+		max-width: 340px;
+		margin: auto;
+
+		.element {
+			text-align: left;
+		}
+
+		input {
+			width: 100%;
+			height: 36px;
+			padding: 0 12px;
+			border: 1px solid transparent;
+			font-size: 16px;
+			color: #1a171b;
+			background: #eceded;
+
+			&.error {
+				border-color: red;
+			}
+
+			@include placeholder() {
+				color: $gray;
+			} 
+		}
+
+		label.error {
+			font-size: 14px;
+			color: red;
+			margin-bottom: 0;
+		}
+
+		.buttons {
+			margin-top: 25px;
+		}
+	}
+}
+
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+  color: $blue;
+  font-size: 8px;
+  margin: 0px auto 50px;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation-delay: -0.14s;
+  animation-delay: -0.14s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -2.5em;
+  -webkit-animation-delay: -0.28s;
+  animation-delay: -0.28s;
+}
+.loader:after {
+  left: 2.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2em 0 -1em;
+  }
+  40% {
+    box-shadow: 0 2em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2em 0 -1em;
+  }
+  40% {
+    box-shadow: 0 2em 0 0;
+  }
 }

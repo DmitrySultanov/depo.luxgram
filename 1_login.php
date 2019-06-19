@@ -31,6 +31,7 @@
 							<div class="flex flex-nowrap flex-valign flex-justi">
 								<div class="password-elem element mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 									<input type="password" id="password" name="password" class="required mdl-textfield__input" data-msg-required="Заполните поле">
+									<i class="fa fa-eye-slash"></i>
 									<label class="mdl-textfield__label" for="password">Пароль</label>
 								</div>
 								<a href="#" class="forgot-password">Забыли пароль?</a>

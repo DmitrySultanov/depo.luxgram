@@ -13,30 +13,33 @@ $(document).ready(function(){
 	    }
 	});
 
-	$(function () {
-	  	$('[data-toggle="tooltip"]').tooltip();
+  	$('[data-toggle="tooltip"]').tooltip();
 
-	  	$('[data-toggle="popover-html"]').popover({
-		    container: 'body',
-		    html: true,
-			content: function() {
-			    var id = $(this).attr('id');
-			    return $('#po' + id).html();
-			}
-	  	});
+  	$('[data-toggle="popover-html"]').popover({
+	    container: 'body',
+	    html: true,
+		content: function() {
+		    var id = $(this).attr('id');
+		    return $('#po' + id).html();
+		}
+  	});
 
-	  	$('[data-toggle="popover-html"]').on('inserted.bs.popover', function () {
-		  $('[data-toggle="tooltip"]').tooltip();
-		})
+  	$('[data-toggle="popover-html"]').on('inserted.bs.popover', function () {
+	  $('[data-toggle="tooltip"]').tooltip();
 	});
 
-  	$(function (){
-  		$('.js-account-overlay').on('click', function (e){
-  			e.preventDefault();
+	$('.js-account-overlay').on('click', function (e){
+		e.preventDefault();
+		$(this).parent().toggleClass('active');
+	});
 
-  			$(this).parent().toggleClass('active');
-  		});
-  	});
+	$('.account .nickname').dotdotdot({
+		height: 60,
+	});
+
+	$('.account .user-descr').dotdotdot({
+		height: 40,
+	});
 
   	function calcTariff (){
   		var basePrice = 500;
@@ -62,11 +65,31 @@ $(document).ready(function(){
   	calcTariff();
 
 
-  	$(function (){
-  		$('#stepper').slider({
-  			min: 1,
-  			max: 6,
-  			step: 1
-  		});
-  	});
+	$('#stepper').slider({
+		min: 1,
+		max: 6,
+		step: 1
+	});
+
+	$('#password + .fa').on('click', function() {
+	   $(this).toggleClass('fa-eye').toggleClass('fa-eye-slash'); 
+	   $('#password').togglePassword(); 
+	});
+
+	$('.js-proxy-link').on('click', function() {
+		$(this).toggleClass('active');
+		$('.js-proxy-hidden').slideToggle();
+
+		return false
+	});
+
+	$('.popup-modal').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		modal: true
+	});
+	$(document).on('click', '.popup-modal-dismiss', function (e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+	});
 });

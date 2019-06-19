@@ -11,23 +11,8 @@
 			<? include('inc/header.php'); ?>
 			
 			<div class="main-section-window flex flex-nowrap">
-				<div class="sidebar child-full--height">
-					<div class="flex flex-column flex-justi">
-						<ul>
-							<li><a href="#" class="active">Instagram аккаунты</a></li>
-							<li><a href="#">Direct</a></li>
-							<li><a href="#">Подписки</a></li>
-							<li><a href="#">Отписки</a></li>
-							<li><a href="#">Автосообщения</a></li>
-							<li><a href="#">Автокомментарии</a></li>
-							<li><a href="#">Автоприветсвие</a></li>
-							<li><a href="#">Просмотр Stories</a></li>
-						</ul>
-						<div class="flex flex-center">
-							<button class="blue-btn question-btn">Задать вопрос</button>
-						</div>
-					</div>
-				</div>
+				<? include('inc/sidebar.php'); ?>
+				
 				<div class="content gray--background">
 
 					<div class="content-top-sector">
@@ -60,7 +45,7 @@
 								<div class="account">
 									<a href="#"></a>
 
-									<div class="account__user flex flex-valign">
+									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user1.png" alt=""/>
 										<div class="user-name">
 											<div class="nickname"><span>the_rostyslav</span></div>
@@ -86,7 +71,7 @@
 								<div class="account">
 									<a href="#"></a>
 
-									<div class="account__user flex flex-valign">
+									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user2.png" alt=""/>
 										<div class="user-name">
 											<div class="nickname"><span>frank_bovalev</span></div>

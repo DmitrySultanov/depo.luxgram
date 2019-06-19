@@ -26,6 +26,10 @@ $(document).ready(function(){
 					required: true,
 					minlength: 3
 				},
+				proxy_password: {
+					required: true,
+					minlength: 4
+				},
 				password: {
 					required: true,
 					minlength: 4
@@ -41,6 +45,10 @@ $(document).ready(function(){
 					minlength: "Введите имя полностью"
 				},
 				password: {
+					required: "Пожалуйста введите пароль",
+					minlength: ""
+				},
+				proxy_password: {
 					required: "Пожалуйста введите пароль",
 					minlength: ""
 				},

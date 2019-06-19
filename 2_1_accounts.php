@@ -11,23 +11,8 @@
 			<? include('inc/header.php'); ?>
 			
 			<div class="main-section-window flex flex-nowrap">
-				<div class="sidebar child-full--height">
-					<div class="flex flex-column flex-justi">
-						<ul>
-							<li><a href="#" class="active">Instagram аккаунты</a></li>
-							<li><a href="#">Direct</a></li>
-							<li><a href="#">Подписки</a></li>
-							<li><a href="#">Отписки</a></li>
-							<li><a href="#">Автосообщения</a></li>
-							<li><a href="#">Автокомментарии</a></li>
-							<li><a href="#">Автоприветсвие</a></li>
-							<li><a href="#">Просмотр Stories</a></li>
-						</ul>
-						<div class="flex flex-center">
-							<button class="blue-btn question-btn">Задать вопрос</button>
-						</div>
-					</div>
-				</div>
+				<? include('inc/sidebar.php'); ?>
+				
 				<div class="content">
 					<div class="in-container">
 						<div class="content-top-sector">
@@ -47,7 +32,7 @@
 									<a href="#" class="js-account-overlay"></a>
 									<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
 
-									<div class="account__user flex flex-valign">
+									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user1.png" alt=""/>
 										<div class="user-name">
 											<div class="nickname"><span>the_rostyslav</span><span class="badge">3</span></div>
@@ -84,7 +69,7 @@
 									<a href="#" class="js-account-overlay"></a>
 									<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
 
-									<div class="account__user flex flex-valign">
+									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user2.png" alt=""/>
 										<div class="user-name">
 											<div class="nickname"><span>frank_bovalev</span><span class="badge">11</span></div>
