@@ -76,8 +76,7 @@ $(document).ready(function(){
 		$this.submit(function(){
 
 			if($this.valid()){
-				$('body').css('overflow', 'hidden');
-				$successModal.fadeIn();
+				// $successModal.fadeIn();
 				setTimeout(function(){
 					$this.find('input, textarea').removeClass('error');
 					$this.find('.mdl-textfield--floating-label').removeClass('is-dirty is-focused');

@@ -43,8 +43,8 @@ html {
 		height: 100%;
 	}
 	&.flex-align {
-		-webkit-justify-content: space-between;
-		justify-content: space-between;
+		-webkit-align-items: center;
+		align-items: center;
 	}
 	&.flex-nowrap {
 		flex-wrap: nowrap;
@@ -302,6 +302,12 @@ h2, .subtitle {
 		left: 12px;
 	}
 }
+.confirm-btn {
+	padding: 17px 20px 17px 54px;
+}
+.next-step-btn {
+	padding: 17px 54px 17px 20px;
+}
 
 .badge {
 	font-size: 11px;
@@ -315,6 +321,18 @@ h2, .subtitle {
     padding: 0;
     vertical-align: top;
     margin: 0 5px;
+}
+
+
+input.error {
+	border-color: red!important;
+}
+label.error {
+	font-size: 12px;
+	color: red;
+	text-align: left;
+	margin-bottom: 0;
+	line-height: 12px;
 }
 
 .popover-content {
@@ -743,6 +761,187 @@ h2, .subtitle {
 			top: 20px;
 			right: 20px;
 		}
+
+		form {
+			width: 100%;
+		}
+
+		.form-buttons {
+			margin-top: 25px;
+
+			.back {
+				position: absolute;
+			    right: 100%;
+			    white-space: nowrap;
+			}
+		}
+
+		.leftside {
+			width: 37%;
+		}
+
+		.rightside {
+			width: 63%;
+		}
+		.pl {
+			padding-left: 25px!important;
+		}
+
+		.bordered {
+			border-left: 2px dotted #d2d2d3;
+		}
+
+		.form-block {
+			margin-top: 15px;
+			max-width: 385px;
+			width: 100%;
+			padding-left: 25px;
+
+			span, p {
+				font-size: 16px;
+				color: #000;
+				margin-bottom: 5px;
+				max-width: 100%;
+			}
+
+			.fa {
+				color: $gray;
+			}
+
+			.element {
+				margin-bottom: 15px;
+			}
+
+			input {
+				width: 100%;
+				height: 38px;
+				background: #eceded;
+				padding: 0 12px;
+				border: 1px solid transparent;
+			}
+
+			.flex-cols {
+				>.element {
+					margin-bottom: 0;
+					&:first-child {
+						width: 70%;
+						margin-right: 10px;
+					}
+					&:last-child {
+						width: 30%;
+					}
+				}
+			}
+		}
+
+		.form-checkboxes {
+			padding: 5px 0;
+			margin-top: 15px;
+
+			.element {
+				label {
+					margin-bottom: 0;
+					padding: 5px 0;
+				}
+
+				.fa {
+					margin-left: 5px;
+					color: $gray;
+				}
+
+				span {
+					margin-left: 10px;
+				}
+
+				input[type="radio"] {
+					position: absolute;
+					opacity: 0;
+					width: 0;
+					height: 0;
+					overflow: hidden;
+
+					&:checked + i:after {
+						@include transform(scale(1));
+						@include transition(.2s);
+					}
+				}
+
+				input[type="radio"] + i {
+					display: inline-block;
+					width: 18px;
+					height: 18px;
+					border-radius: 50%;
+					border: 1px solid #959697;
+					background: #eceded;
+					position: relative;
+
+					&:after {
+						content: '';
+						background: $blue;
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						margin: auto;
+						@include transform(scale(0));
+						@include transition(.2s);
+					}
+				}
+
+				input[type="checkbox"] {
+					position: absolute;
+					opacity: 0;
+					width: 0;
+					height: 0;
+					overflow: hidden;
+
+					&:checked + i:after {
+						@include transform(scale(1));
+						@include transition(.2s);
+					}
+				}
+
+				input[type="checkbox"] + i {
+					display: inline-block;
+					width: 20px;
+					height: 20px;
+					border: none;
+					background: #eceded;
+					position: relative;
+
+					&:after {
+						content: '';
+						background: url('../img/check_ico.svg');
+						background-position: center; 
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						margin: auto;
+						@include transform(scale(0));
+						@include transition(.2s);
+					}
+				}
+			}
+		}
+
+		&.account-free {
+			padding: 35px 35px;
+			height: auto;
+
+			.account__user, .account__info {
+				-webkit-align-items: center;
+				align-items: center;
+				height: auto;
+			}
+		}
 	} 
 }
 
@@ -833,8 +1032,6 @@ h2, .subtitle {
 		}
 
 		label.error {
-			font-size: 12px;
-			color: red;
 			position: absolute;
 			margin-bottom: 0;
 		}
@@ -1039,7 +1236,111 @@ h2, .subtitle {
 }
 
 .stepper-wrap {
-	width: 370px;
+	max-width: 360px;
+	width: 100%;
+	position: relative;
+
+	.stepper-grid {
+		position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: -25px;
+
+		span {
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			margin-left: -7px;
+    		margin-top: -4px;
+    		text-align: center;
+    		font-size: 14px;
+    		color: $gray;
+
+    		&:after {
+    			content: '';
+    			width: 14px;
+    			height: 14px;
+				border-radius: 50%;
+				background: #c6c7c8;
+				position: absolute;
+				top: 25px;
+				left: 0;
+    		}
+    		&:before {
+				content: '';
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: transparent;
+				position: absolute;
+				top: 28px;
+				left: 3px;
+				z-index: 22;
+				pointer-events: none;
+			}
+
+			&.selected {
+				color: $blue;
+
+				&:before {
+					background: $blue;
+				}
+			}
+
+			&:nth-child(1) {
+				left: 0%;
+				color: $blue;
+
+				&:before {
+					background: $blue;
+				}
+			}
+			&:nth-child(2) {
+				left: 25%;
+			}
+			&:nth-child(3) {
+				left: 50%;
+			}
+			&:nth-child(4) {
+				left: 75%;
+			}
+			&:nth-child(5) {
+				left: 100%;
+			}
+		}
+	}
+
+	.ui-widget-content {
+		border: none;
+		background: #c6c7c8;
+		height: 6px;
+
+		.ui-slider-handle {
+			width: 8px;
+			height: 8px;
+			background: $blue;
+			top: -1px;
+		    border: none;
+		    margin-left: -4px;
+
+		    &:after {
+		    	content: 'Шаг';
+		    	color: $blue;
+		    	font-size: 14px;
+		    	position: absolute;
+		    	top: -29px;
+    			left: -29px;
+		    	font-family: 'SFUIDisplay-Light';
+		    }
+		}
+	}
+
+	.ui-slider-horizontal .ui-slider-range {
+		top: 20%;
+	    height: 60%;
+	    background: $blue;
+	}
 }
 // ожидание якассы
 .waitbox {
@@ -1156,7 +1457,6 @@ h2, .subtitle {
 		right: 15px;
 	}
 }
-
 .modal-sm {
 	max-width: 460px;
 	background: #fff;
@@ -1172,7 +1472,6 @@ h2, .subtitle {
 		color: $gray;
 	}
 }
-
 .verify-modal {
 
 	.buttons {
@@ -1183,7 +1482,6 @@ h2, .subtitle {
 		}
 	}
 }
-
 .check-account-modal {
 
 	.form-validate {
@@ -1220,6 +1518,15 @@ h2, .subtitle {
 
 		.buttons {
 			margin-top: 25px;
+		}
+
+		.request-again-link {
+			font-size: 16px;
+
+			.fa {
+				position: relative;
+				top: 1px;
+			}
 		}
 	}
 }

@@ -66,7 +66,6 @@
 				
 		</section>
 	</div>
-	<footer></footer>
 	
 	<? include('inc/modal.php'); ?>
 	<? include('inc/scripts.php'); ?>

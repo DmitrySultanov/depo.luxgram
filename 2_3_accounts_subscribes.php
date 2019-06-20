@@ -36,6 +36,13 @@
 							<div class="flex flex-justi flex-valign">
 								<h2>Выберите аккаунт</h2>
 								<div class="stepper-wrap">
+									<div class="stepper-grid js-stepper-grid">
+										<span >1</span>
+										<span>2</span>
+										<span>3</span>
+										<span>4</span>
+										<span>5</span>
+									</div>
 									<div id="stepper"></div>
 								</div>
 							</div>
@@ -100,22 +107,33 @@
 			</div>
 		</section>
 	</div>
-	<div class="popover-content"> 
-		<div id="popover-card">
-			<div class="account-action-buttons flex">
-				<a href="#" class="action-btn send-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn subscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn resubscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn automessage-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn autocomment-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn hello-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-				<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
-			</div>
-		</div>
-	</div>
-	<footer></footer>
 	
 	<? include('inc/modal.php'); ?>
 	<? include('inc/scripts.php'); ?>
+	<script>
+		$(function (){
+			$('#stepper').slider({
+				min: 1,
+				max: 5,
+				range: "min",
+				step: 1,
+				create: function( event, ui ) {
+		          	stepperFunc(ui);
+		        },
+				slide: function( event, ui ) {
+		          	stepperFunc(ui);
+		        },
+			});
+
+			function stepperFunc (ui){
+				var steps = $('.js-stepper-grid > span');
+
+				steps.removeClass('selected');
+				for(var i= 0; i < ui.value; i++) {
+					$(steps[i]).addClass('selected');
+				}
+			}
+		});
+	</script>
 </body>
 </html>

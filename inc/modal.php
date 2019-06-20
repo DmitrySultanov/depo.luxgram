@@ -23,6 +23,20 @@
 	</form>
 </div>
 
+<div class="popover-content"> 
+	<div id="popover-card">
+		<div class="account-action-buttons flex">
+			<a href="#" class="action-btn send-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn subscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn resubscribe-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn automessage-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn autocomment-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn hello-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+			<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-container="body" data-title="title"></a>
+		</div>
+	</div>
+</div>
+
 <iframe frameborder="0" id="post_form" name="post_form"></iframe>
 
 <div class="pushy pushy-left">
