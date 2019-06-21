@@ -128,8 +128,8 @@ $(document).ready(function(){
 	    if (chr < '0' || chr > '9') {
 	      return false;
 	    }
-	  });
-	  function getChar(event) {
+	});
+	function getChar(event) {
 	    if (event.which == null) {
 	      if (event.keyCode < 32) return null;
 	      return String.fromCharCode(event.keyCode) // IE
@@ -140,5 +140,13 @@ $(document).ready(function(){
 	      return String.fromCharCode(event.which) // остальные
 	    }
 	    return null; // специальная клавиша
-	  }
+	}
+
+	$('.select-single').select2({
+	    minimumResultsForSearch: -1,
+	});
+	$('.select-single').on('select2:select', function (e) {
+	    console.log(e.target.selectedIndex) //индекс выбранного
+	    $(this).select2("close");
+	});
 });

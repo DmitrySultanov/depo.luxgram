@@ -14,6 +14,7 @@ $gray: #87888a;
 body{
 	font-family: 'SFUIDisplay-Regular';
 	-webkit-text-size-adjust: none;
+	color: #000;
 }
 
 .in-container {
@@ -162,6 +163,10 @@ h2, .subtitle {
 		height: 54px;
 	}
 
+	&.btn-large-size {
+		padding: 17px 18px;
+	}
+
 	&.add-account-btn {
 		width: 300px;
 		height: 86px;
@@ -253,6 +258,9 @@ h2, .subtitle {
 		background-image: url('../img/watch_stories_ico.svg');
 	}
 }
+.download-btn {
+	padding-right: 54px!important;
+}
 .close-btn {
 	border: none;
 	background-color: transparent;
@@ -308,6 +316,42 @@ h2, .subtitle {
 .next-step-btn {
 	padding: 17px 54px 17px 20px;
 }
+.manage-button {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+	border-radius: 50%;
+	@include background-size(contain);
+
+	&.pause-btn {
+		background-image: url('../img/pause_btn.svg');
+
+		&:hover {
+			background-image: url('../img/pause_btn_hover.svg');
+		}
+	}
+
+	&.trash-btn {
+		background-image: url('../img/trash_btn.svg');
+
+		&:hover {
+			background-image: url('../img/trash_btn_hover.svg');
+		}
+	}
+}
+.load-more-btn {
+	border: 2px solid $blue;
+	border-radius: 30px;
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 6px 12px;
+	font-size: 16px;
+	color: $blue;
+}
 
 .badge {
 	font-size: 11px;
@@ -323,6 +367,49 @@ h2, .subtitle {
     margin: 0 5px;
 }
 
+.pagination {
+	margin: 15px 0;
+
+	a {
+		font-size: 16px;
+		color: $blue;
+		display: inline-block;
+		position: relative;
+		width: 20px;
+		text-align: center;
+
+		&.active {
+			color: $gray;
+		}
+
+		&.back-btn {
+			padding-left: 10px;
+			width: auto;
+			margin-right: 10px;
+
+			&:before {
+				content: '\f104';
+				font-family: 'FontAwesome';
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+		&.next-btn {
+			padding-right: 10px;
+			width: auto;
+			margin-left: 10px;
+
+			&:after {
+				content: '\f105';
+				font-family: 'FontAwesome';
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+}
 
 input.error {
 	border-color: red!important;
@@ -333,6 +420,14 @@ label.error {
 	text-align: left;
 	margin-bottom: 0;
 	line-height: 12px;
+}
+
+.pl {
+	padding-left: 25px!important;
+}
+
+.no-gutters {
+	margin: 0!important;
 }
 
 .popover-content {
@@ -583,6 +678,7 @@ label.error {
 }
 
 .accounts-list {
+	margin-bottom: 30px;
 
 	.account {
 		border: 1px solid #e2e3e4;
@@ -783,9 +879,6 @@ label.error {
 		.rightside {
 			width: 63%;
 		}
-		.pl {
-			padding-left: 25px!important;
-		}
 
 		.bordered {
 			border-left: 2px dotted #d2d2d3;
@@ -834,104 +927,6 @@ label.error {
 			}
 		}
 
-		.form-checkboxes {
-			padding: 5px 0;
-			margin-top: 15px;
-
-			.element {
-				label {
-					margin-bottom: 0;
-					padding: 5px 0;
-				}
-
-				.fa {
-					margin-left: 5px;
-					color: $gray;
-				}
-
-				span {
-					margin-left: 10px;
-				}
-
-				input[type="radio"] {
-					position: absolute;
-					opacity: 0;
-					width: 0;
-					height: 0;
-					overflow: hidden;
-
-					&:checked + i:after {
-						@include transform(scale(1));
-						@include transition(.2s);
-					}
-				}
-
-				input[type="radio"] + i {
-					display: inline-block;
-					width: 18px;
-					height: 18px;
-					border-radius: 50%;
-					border: 1px solid #959697;
-					background: #eceded;
-					position: relative;
-
-					&:after {
-						content: '';
-						background: $blue;
-						width: 10px;
-						height: 10px;
-						border-radius: 50%;
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						margin: auto;
-						@include transform(scale(0));
-						@include transition(.2s);
-					}
-				}
-
-				input[type="checkbox"] {
-					position: absolute;
-					opacity: 0;
-					width: 0;
-					height: 0;
-					overflow: hidden;
-
-					&:checked + i:after {
-						@include transform(scale(1));
-						@include transition(.2s);
-					}
-				}
-
-				input[type="checkbox"] + i {
-					display: inline-block;
-					width: 20px;
-					height: 20px;
-					border: none;
-					background: #eceded;
-					position: relative;
-
-					&:after {
-						content: '';
-						background: url('../img/check_ico.svg');
-						background-position: center; 
-						width: 20px;
-						height: 20px;
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						margin: auto;
-						@include transform(scale(0));
-						@include transition(.2s);
-					}
-				}
-			}
-		}
-
 		&.account-free {
 			padding: 35px 35px;
 			height: auto;
@@ -942,7 +937,73 @@ label.error {
 				height: auto;
 			}
 		}
+
+		.account-info {
+
+			&__row {
+				margin: 4px 0;
+
+				strong, .row-title {
+					font-family: 'SFUIDisplay-Bold';
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.account-manage-button {
+			padding-left: 35px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
 	} 
+
+	&.subs-list {
+		border-top: 1px solid #e2e3e4;
+		border-bottom: 1px solid #e2e3e4;
+
+		.account {
+			border-bottom: none;
+			border-top: none;
+			margin-bottom: 0;
+			padding: 16px 35px;
+
+			&:first-child {
+				padding-top: 54px;
+			}
+		}
+	}
+
+	.button-wrap {
+		padding: 15px 0 30px;
+		background-color: #fff;
+	}
+}
+
+// логи
+.logs-list {
+	border: 1px solid #e2e3e4;
+	background-color: #fff;
+	padding: 15px 40px;
+
+	li {
+		padding: 7px 0;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		width: 100%;
+		font-size: 16px;
+		border-bottom: 1px solid #e2e3e4;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		> div:first-child {
+			margin-right: 5px;
+		}
+	}
 }
 
 .login-system {
@@ -1235,6 +1296,7 @@ label.error {
 	}
 }
 
+// шаги
 .stepper-wrap {
 	max-width: 360px;
 	width: 100%;
@@ -1353,6 +1415,8 @@ label.error {
 	}
 }
 
+
+
 .form-data {
 	max-width: 360px;
 	width: 100%;
@@ -1443,6 +1507,140 @@ label.error {
 	.proxy-block-hidden {
 		display: none;
 		margin-top: 25px;
+	}
+}
+
+.form-checkboxes {
+	padding: 5px 0;
+	margin-top: 15px;
+
+	.element {
+		label {
+			margin-bottom: 0;
+			padding: 5px 0;
+
+			span:not(.select2) {
+				margin-left: 10px;
+				vertical-align: top;
+			}
+		}
+
+		.fa {
+			margin-left: 5px;
+			color: $gray;
+		}
+
+		input[type="radio"] {
+			position: absolute;
+			opacity: 0;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+
+			&:checked + i:after {
+				@include transform(scale(1));
+				@include transition(.2s);
+			}
+		}
+
+		input[type="radio"] + i {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: 1px solid #959697;
+			background: #eceded;
+			position: relative;
+
+			&:after {
+				content: '';
+				background: $blue;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				@include transform(scale(0));
+				@include transition(.2s);
+			}
+		}
+
+		input[type="checkbox"] {
+			position: absolute;
+			opacity: 0;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+
+			&:checked + i:after {
+				@include transform(scale(1));
+				@include transition(.2s);
+			}
+		}
+
+		input[type="checkbox"] + i {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: none;
+			background: #eceded;
+			position: relative;
+
+			&:after {
+				content: '';
+				background: url('../img/check_ico.svg');
+				background-position: center; 
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				@include transform(scale(0));
+				@include transition(.2s);
+			}
+		}
+	}
+}
+
+.form-settings {
+	color: #1a171b;
+	margin-bottom: 15px;
+
+	.leftside {
+		width: 38%;
+	}
+
+	.rightside {
+		width: 62%;
+	}
+
+	.element {
+		height: 32px;
+	}
+
+	.flex-cols {
+		> div {
+			&:first-child {
+				min-width: 130px;
+			}
+		}
+	}
+
+	.top-right-buttons {
+		position: absolute;
+	    top: -10px;
+	    right: 0;
+
+		a {
+			margin-left: 15px;
+		}
 	}
 }
 
