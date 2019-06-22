@@ -64,19 +64,19 @@
 													<div class="element">
 														<label class='flex flex-valign'>
 															<input type="checkbox" checked name="start"><i></i>
-															<span>Плавный старт</span><i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i>
+															<span>Плавный старт <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></span>
 														</label>
 													</div>
 													<div class="element">
 														<label class='flex flex-valign'>
 															<input type="checkbox" name="list"><i></i>
-															<span>Отписаться по окончанию</span><i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i>
+															<span>Отписаться по окончанию <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></span>
 														</label>
 													</div>
 													<div class="element">
 														<label class='flex flex-valign'>
 															<input type="checkbox" name="list"><i></i>
-															<span>Подписываться на закрытые профили</span><i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i>
+															<span>Подписываться на закрытые профили <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></span>
 														</label>
 													</div>
 												</div>

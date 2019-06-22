@@ -6,8 +6,9 @@
 		</div>
 		<div class="flex flex-end">
 			<div class="user flex flex-center-center nowrap">
+				<a href="#"></a>
 				<div class="user__icon"><img src="assets/img/profile_ico.svg" alt=""/></div>
-				<div class="user__name"><a href="#">Алексей Морсиенко</a></div>
+				<div class="user__name">Алексей Морсиенко</div>
 			</div>
 		</div>
 	</div>

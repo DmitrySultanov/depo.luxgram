@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Выберите тип - LuxGram</title>
+	<title>Автоприветствия - LuxGram</title>
 	<? include('inc/head.php'); ?>
 </head>
 <body>
@@ -14,11 +14,10 @@
 				<? include('inc/sidebar.php'); ?>
 				
 				<div class="content gray--background">
-
 					<div class="content-top-sector">
 						<div class="in-container">
 							<div class="title-block">
-								<h1>ПОДПИСКИ</h1>
+								<h1>Автоприветствия</h1>
 							</div>
 							<p>Система будет подписываться на пользователей по заданным настройкам. Система будет подписываться на пользователей по заданным настройкам. Система будет подписываться на пользователей по заданным настройкам.</p>
 
@@ -33,15 +32,13 @@
 					<div class="accounts-wrapper">
 						<div class="in-container">
 
-							<div class="flex flex-justi flex-align">
-								<h2>Выберите тип</h2>
-								<div class="stepper-wrap">
+							<div class="flex flex-justi flex-valign">
+								<h2>Настройка автосообщений</h2>
+								<div class="stepper-wrap three-step">
 									<div class="stepper-grid js-stepper-grid">
-										<span >1</span>
+										<span>1</span>
 										<span>2</span>
 										<span>3</span>
-										<span>4</span>
-										<span>5</span>
 									</div>
 									<div id="stepper"></div>
 								</div>
@@ -60,25 +57,34 @@
 														<div class="user-descr">Личный блог блогера</div>
 													</div>
 												</div>
+												<div class="form-checkboxes">
+													<div class="element">
+														<label class='flex flex-valign'>
+															<input type="checkbox" checked name="start"><i></i>
+															<span>Плавный старт</span><i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i>
+														</label>
+													</div>
+												</div>
 											</div>
 											<div class="rightside">
-												<div class="form-checkboxes bordered pl">
-													<div class="element">
-														<label class='flex flex-valign'>
-															<input type="radio" checked name="list"><i></i>
-															<span>По списку <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></span>
-														</label>
+												<div class="form-block bordered">
+													<div class="element message-block">
+														<p>Текст автоприветствия <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></p>
+														<div class="message-block__inner">
+															<a href="#" class="smile-btn"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
+															<textarea name="messages" placeholder="Например: Спасибо за подписку, Вы очень добрый человек! Давайте дружить!"></textarea>
+															<div class="addbtns">
+																<a href="#" class="addbtn add-pictures" data-toggle="tooltip" title="Добавить изображение"><img src="assets/img/pictures_ico.png" alt=""/></a>
+																<a href="#" class="addbtn add-posts" data-toggle="tooltip" title="Добавить пост"><img src="assets/img/posts_ico.png" alt=""/></a>
+															</div>
+														</div>
 													</div>
-													<div class="element">
-														<label class='flex flex-valign'>
-															<input type="radio" name="list"><i></i>
-															<span>По активной аудитории конкурентов <i data-toggle="tooltip" title="title" class="fa fa-question-circle" aria-hidden="true"></i></span>
-														</label>
-													</div>
+													<a href="#" class="bordered-btn more-add-btn">+ Добавить еще...</a>
+													<div class="gray-txt">Добавив новое сообщение вы минуете систему блокировки. За счет показа этих сообщений в случайном порядке вы минуете систему блоки- ровки сервиса Instagram.</div>
 												</div>	
 												<div class="form-buttons flex flex-align pl">
 													<a href="#" class="back"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Вернуться</a>
-													<button type="submit" class="blue-btn next-step-btn">Следующий шаг</button>
+													<button type="submit" class="blue-btn next-step-btn">Запустить</button>
 												</div>
 											</div>
 										</div>
@@ -99,10 +105,10 @@
 		$(function (){
 			$('#stepper').slider({
 				min: 1,
-				max: 5,
+				max: 3,
 				range: "min",
 				step: 1,
-				value: 2,
+				value: 3,
 				create: function( event, ui ) {
 					var q = $('#stepper').slider('value');
 		          	stepperStartFunc(q);

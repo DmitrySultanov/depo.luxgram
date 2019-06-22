@@ -1,7 +1,7 @@
 <div class="sidebar child-full--height">
 	<div class="flex flex-column flex-justi">
 		<ul>
-			<li><a href="#" class="active">Instagram аккаунты</a></li>
+			<li class="active"><a href="#">Instagram аккаунты</a></li>
 			<li><a href="#">Direct</a></li>
 			<li><a href="#">Подписки</a></li>
 			<li><a href="#">Отписки</a></li>

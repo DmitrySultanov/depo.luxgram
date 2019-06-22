@@ -3,8 +3,8 @@
 	<div class="subtitle">Подтвердите аккаунт</div>
 	<p>Выберите способ подтверждения</p>
 	<div class="buttons flex flex-center">
-		<a href="#check-account-modal" class="blue-btn sms-btn popup-modal">По SMS</a>
-		<a href="#" class="blue-btn mail-btn">По Email</a>
+		<a href="#check-account-modal" class="blue-btn narrow-btn sms-btn popup-modal">По SMS</a>
+		<a href="#" class="blue-btn narrow-btn mail-btn">По Email</a>
 	</div>	
 </div>
 
@@ -40,9 +40,16 @@
 <iframe frameborder="0" id="post_form" name="post_form"></iframe>
 
 <div class="pushy pushy-left">
+	<a href="/" class="logo">lux<span>gram</span></a>
 	<ul>
-	    <li class="pushy-link"><a href="#">Instagram аккаунты</a></li>
-	    <li class="pushy-link"><a href="#">Direct</a></li>
+	    <li class="pushy-link active"><a href="#">Instagram аккаунты</a></li>
+		<li class="pushy-link"><a href="#">Direct</a></li>
+		<li class="pushy-link"><a href="#">Подписки</a></li>
+		<li class="pushy-link"><a href="#">Отписки</a></li>
+		<li class="pushy-link"><a href="#">Автосообщения</a></li>
+		<li class="pushy-link"><a href="#">Автокомментарии</a></li>
+		<li class="pushy-link"><a href="#">Автоприветсвие</a></li>
+		<li class="pushy-link"><a href="#">Просмотр Stories</a></li>
 	</ul>
 </div>
 <div class="site-overlay"></div>

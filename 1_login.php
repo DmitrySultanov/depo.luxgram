@@ -9,11 +9,13 @@
 	<div class="wrapper">
 		<section class="login-system">
 			<header class="header child-full--height">
-				<div class="container child-full--height child-full--width">
-					<div class="row align-items-center no-gutters">
-						<div class="col-xl6 col-lg6 col-md6 col-sm-6 col-xs-12">
-							<div class="header__start flex">
-								<a href="/" class="logo">lux<span>gram</span></a>
+				<div class="row">
+					<div class="container child-full--height child-full--width">
+						<div class="row align-items-center no-gutters">
+							<div class="col-xl6 col-lg6 col-md6 col-sm-6 col-xs-12">
+								<div class="header__start flex">
+									<a href="/" class="logo">lux<span>gram</span></a>
+								</div>
 							</div>
 						</div>
 					</div>

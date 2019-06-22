@@ -48,7 +48,7 @@
 											</div>
 										</div>
 										<div class="rightside pl">
-											<div class="element flex-cols flex flex-align">
+											<div class="element flex-cols flex flex-align flex-nowrap">
 												<div>Выберите тип:</div>
 												<div>
 													<label class="flex">
@@ -57,7 +57,7 @@
 													</label>
 												</div>
 											</div>
-											<div class="element flex-cols flex flex-align">
+											<div class="element flex-cols flex flex-align flex-nowrap">
 												<div></div>
 												<div>
 													<label class="flex">
@@ -292,7 +292,7 @@
 								</div>
 
 								<div class="flex flex-center button-wrap">
-									<a href="#" class="load-more-btn">Загрузить еще...</a>
+									<a href="#" class="bordered-btn">Загрузить еще...</a>
 								</div>
 							</div>
 						</div>

@@ -50,7 +50,7 @@ $(document).ready(function(){
 	        max: 12,
 	        grid: true,
 	        step: 1,
-	        grid_num: 6,
+	        grid_num: 2,
 		}).on("change", function () {
 	        var $inp = $(this);
 	        var month = $inp.prop("value");
