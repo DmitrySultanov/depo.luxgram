@@ -46,7 +46,7 @@
 											</div>
 										</div>
 										<div class="rightside pl">
-											<div class="element flex-cols flex flex-align">
+											<div class="element flex-cols flex flex-align flex-nowrap">
 												<div>Выберите тип:</div>
 												<div>
 													<label class="flex">
@@ -55,7 +55,7 @@
 													</label>
 												</div>
 											</div>
-											<div class="element flex-cols flex flex-align">
+											<div class="element flex-cols flex flex-align flex-nowrap">
 												<div></div>
 												<div>
 													<label class="flex">

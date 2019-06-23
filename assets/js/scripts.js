@@ -33,11 +33,11 @@ $(document).ready(function(){
 		$(this).parent().toggleClass('active');
 	});
 
-	$('.account .nickname').dotdotdot({
+	$('.account__user .nickname').dotdotdot({
 		height: 60,
 	});
 
-	$('.account .user-descr').dotdotdot({
+	$('.account__user .user-descr').dotdotdot({
 		height: 40,
 	});
 
@@ -149,4 +149,12 @@ $(document).ready(function(){
 	    console.log(e.target.selectedIndex) //индекс выбранного
 	    $(this).select2("close");
 	});
+
+	$('.js-broadcast-messages-inbox').mCustomScrollbar({
+        theme:"dark",
+        scrollbarPosition: "outside",
+        scrollButtons:{
+          enable:false
+        }
+    });
 });

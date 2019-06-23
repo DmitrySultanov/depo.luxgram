@@ -367,6 +367,13 @@ h2, .subtitle {
 			background-image: url('../img/trash_btn_hover.svg');
 		}
 	}
+	&.down-arrow-btn {
+		background-image: url('../img/down_arrow_ico.svg');
+
+		&:hover {
+			background-image: url('../img/down_arrow_hover_ico.svg');
+		}
+	}
 }
 .bordered-btn {
 	border: 2px solid $blue;
@@ -459,6 +466,22 @@ label.error {
 	@media (max-width: 768px) {
 		padding-left: 0!important;
 	}
+}
+
+.pb {
+	padding-bottom: 40px!important;
+
+	@media (max-width: 1024px) {
+		padding-bottom: 30px!important;
+	}
+}
+
+.box-shadow {
+	@include box-shadow(0 7px 22px #dbdcdc);
+}
+
+.bordered {
+	border-left: 2px dotted #d2d2d3;
 }
 
 .no-gutters {
@@ -687,6 +710,7 @@ label.error {
 	width: 230px;
 	min-width: 230px;
 	min-height: calc(100vh - 65px);
+	z-index: 22;
 
 	ul li {
 		border-bottom: 1px solid transparent;
@@ -869,6 +893,7 @@ label.error {
 			img {
 				min-width: 100px;
 				max-width: 100px;
+				border-radius: 50%;
 			}
 
 			.nickname {
@@ -991,10 +1016,6 @@ label.error {
 
 		.rightside {
 			width: 63%;
-		}
-
-		.bordered {
-			border-left: 2px dotted #d2d2d3;
 		}
 
 		&.account-free {
@@ -1265,16 +1286,27 @@ label.error {
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;
+		flex-wrap: wrap;
 		width: 100%;
 		font-size: 16px;
+		line-height: 20px;
 		border-bottom: 1px solid #e2e3e4;
 
 		&:last-child {
 			border-bottom: none;
 		}
 
-		> div:first-child {
-			margin-right: 5px;
+		> div:last-child {
+			margin-left: 5px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding: 15px 15px;
+
+		li {
+			font-size: 14px;
+			line-height: 18px;
 		}
 	}
 }
@@ -1764,6 +1796,425 @@ label.error {
 	}
 }
 
+// список бесед
+.chats-wrapper {
+	margin-bottom: 30px;
+
+	.chats-list {
+		background: #fff;
+		border: 1px solid #e2e3e4;
+		padding-bottom: 25px;
+
+		.account__user-wrap {
+			padding: 35px 25px 25px 35px;
+		}
+
+		.account__user {
+			
+			.user-name {
+				margin-left: 25px;
+			}
+
+			img {
+				min-width: 100px;
+				max-width: 100px;
+			}
+
+			.nickname {
+				font-size: 24px;
+				font-family: 'SFUIDisplay-Bold';
+				line-height: 26px;
+			}
+
+			.user-descr {
+				font-size: 16px;
+				line-height: 20px;
+				margin-top: 4px;
+				margin-bottom: 2px;
+			}
+		}
+
+		.account-manage-button {
+			border-left: 2px dotted #d2d2d3;
+			padding: 15px 0 15px 25px;
+
+			.badge {
+				position: absolute;
+			    top: 10px;
+			    right: -5px;
+			    margin: 0;
+			}
+		}
+
+		.interlocutors-list {
+
+			li {
+				padding: 10px 10px 10px 50px;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid transparent;
+
+				>a {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 44;
+				}
+
+				&.active {
+					background-color: #eceded;
+					border-top-color: #d9dadb;
+					border-bottom-color: #d9dadb;
+				}
+			}
+
+			img {
+				min-width: 70px;
+				max-width: 70px;
+				border-radius: 50%;
+			}
+
+			.user-info {
+				width: calc(100% - 70px);
+				padding-left: 12px;
+
+				&__name {
+					font-size: 16px;
+					line-height: 20px;
+				}
+
+				&__activity {
+					font-size: 16px;
+					color: #000;
+					line-height: 20px;
+					display: -webkit-flex;
+					display: -moz-flex;
+					display: -ms-flex;
+					display: -o-flex;
+					display: flex;
+					flex-wrap: wrap;
+					position: relative;
+
+					p {
+						max-width: 100%;
+						margin-bottom: 0;
+					}
+
+					&.status-new {
+						padding-right: 50px;
+
+						&:after {
+							content: '';
+							width: 10px;
+							height: 10px;
+							border-radius: 50%;
+							background: $blue;
+							position: absolute;
+							top: 50%;
+							right: 30px;
+							margin-top: -5px;
+						}
+					}
+				}
+
+				.mes {
+					color: #000;
+					font-family: 'SFUIDisplay-Bold';
+				}
+			}
+		}
+	}
+
+	.broadcast {
+		background: #fff;
+		border: 1px solid #e2e3e4;
+		padding: 35px 35px 80px 35px;
+		height: 100%;
+
+		ul {
+			max-height: 658px;
+			overflow-y: auto;
+
+			li {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				font-size: 16px;
+				line-height: 20px;
+				color: #1a171b;
+				padding-right: 50px;
+				margin-bottom: 10px;
+			}
+		} 
+
+		.in-mess {
+			&.re-mess {
+				.mess-time {
+					top: auto;
+					margin-top: 0;
+					bottom: 15px;
+				}
+			}
+		}
+
+		.mess-ico {
+			margin-right: 10px;
+			img {
+				min-width: 70px;
+				max-width: 70px;
+			}
+		}
+
+		.mess-body {
+			padding-top: 4px;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			max-width: calc(100% - 80px);
+		}
+
+		.user-name {
+			font-size: 16px;
+			line-height: 20px;
+			color: $gray;
+			margin-bottom: 4px;
+			width: 100%;
+		}
+
+		.mess-time {
+			font-size: 16px;
+			line-height: 20px;
+			color: #87888a;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: -10px;
+		}
+
+		.mess-txt {
+			padding: 10px 15px;
+			border: 1px solid #e2e3e4;
+			border-radius: 30px;
+			max-width: 100%;
+
+			.mess-in-box {
+				margin: 8px 0;
+			}
+
+			&.re-mess {
+				border-radius: 20px;
+			}
+		}
+
+		.my-mess {
+			-webkit-justify-content: flex-end;
+			justify-content: flex-end;
+
+			.mess-body {
+				-webkit-justify-content: flex-end;
+				justify-content: flex-end;
+			}
+
+			.mess-txt {
+				background: #eceded;
+			}
+		}
+
+		.user-info {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+
+			&__ico {
+				padding-right: 15px;
+				img {
+					min-width: 70px;
+					max-width: 70px;
+				}
+			}
+
+			&__name {
+				margin: 5px 0;
+			}
+		}
+
+
+		.broadcast-box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 35px;
+
+			form {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+			    -webkit-justify-content: space-between;
+			    justify-content: space-between;
+			}
+
+			.input-box {
+				position: relative;
+				width: calc(100% - 54px);
+
+				.pic {
+					position: absolute;
+					right: 40px;
+					top: 50%;
+					@include transform(translateY(-50%));
+					display: inline-block;
+				}
+
+				.smile {
+					font-size: 28px;
+					color: $blue;
+					position: absolute;
+					right: 10px;
+					top: 50%;
+					@include transform(translateY(-50%));
+					display: inline-block;
+				}
+			}
+
+			input {
+				background-color: #eceded;
+				border-radius: 30px;
+				font-size: 16px;
+				padding: 0px 75px 0 15px;
+				border: none;
+				height: 46px;
+				width: 100%;
+
+				@include placeholder() {
+					color: $gray;
+				} 
+			}
+
+			button[type="submit"] {
+				background-image: url('../img/send_message_ico.svg');
+				border: none;
+				width: 46px;
+				height: 46px;
+				background-repeat: no-repeat;
+				background-color: transparent;
+				cursor: pointer;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		.chats-list {
+
+			.account__user-wrap {
+				padding: 15px;
+			}
+
+			.account__user {
+				flex-wrap: wrap!important;
+
+				.user-name {
+					width: 100%;
+					margin-left: 0;
+					margin-top: 10px;
+				}
+			}
+
+			.account-manage-button {
+				padding-left: 15px;
+			}
+
+			.interlocutors-list {
+
+				li {
+					padding-left: 25px;
+				}
+
+				.user-info__activity {
+					font-size: 14px;
+					line-height: 18px;
+
+					p {
+						font-size: 14px;
+						line-height: 18px;
+					}
+				}
+			} 
+		}
+
+		.broadcast {
+			padding: 15px 15px 100px 15px;
+
+			ul {
+				li {
+					padding-right: 35px;
+					font-size: 14px;
+    				line-height: 18px;
+				}
+			}
+
+			.mess-body {
+				max-width: calc(100% - 60px);
+			}
+
+			.mess-ico img {
+				min-width: 50px;
+				max-width: 50px;
+			}
+
+			.mess-time {
+				font-size: 12px;
+			}
+
+			.mess-txt {
+				padding: 5px 10px;
+			}
+
+			.user-info {	
+				flex-wrap: wrap;
+
+				&__ico img {
+					min-width: 50px;
+					max-width: 50%;
+				}
+			}
+
+			.broadcast-box {
+				padding: 15px;
+
+				input {
+					padding: 0 15px;
+				}
+
+				.input-box {
+					text-align: right;
+
+					.pic, .smile {
+						position: static;
+						@include transform(translateY(0));
+						vertical-align: text-top;
+						margin-top: 10px;
+					}
+				} 
+			}
+		}
+	}
+}
+
 
 
 .form-data {
@@ -1993,6 +2444,12 @@ label.error {
 		.leftside, .rightside {
 			width: 100%;
 			margin: 5px 0;
+		}
+
+		.top-right-buttons {
+			position: relative;
+			top: 0;
+			margin-top: 15px;
 		}
 	}
 }
