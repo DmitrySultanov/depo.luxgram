@@ -30,7 +30,7 @@
 
 								<div class="account">
 									<a href="#" class="js-account-overlay"></a>
-									<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+									<button type="button" id="popover-card" data-toggle="popover-html" data-trigger="focus"  data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
 
 									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user1.png" alt=""/>
@@ -54,6 +54,11 @@
 										</div>
 									</div>
 
+									<div class="account-left-days">
+										<span>Осталось дней:</span>
+										<span class="days-count">37</span>
+									</div>
+
 									<div class="account-action-buttons flex">
 										<a href="#" class="action-btn btn send-btn" data-toggle="tooltip" data-title="title"></a>
 										<a href="#" class="action-btn btn subscribe-btn" data-toggle="tooltip" data-title="title"></a>
@@ -67,7 +72,7 @@
 
 								<div class="account js-account">
 									<a href="#" class="js-account-overlay"></a>
-									<button type="button" id="pover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+									<button type="button" id="popover-card" data-toggle="popover-html" data-trigger="focus" data-placement="left" class="context-btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
 
 									<div class="account__user flex flex-nowrap flex-valign">
 										<img src="assets/img/account_user2.png" alt=""/>
@@ -99,7 +104,13 @@
 										<a href="#" class="action-btn btn hello-btn" data-toggle="tooltip" data-title="title"></a>
 										<a href="#" class="action-btn btn watch-stories-btn" data-toggle="tooltip" data-title="title"></a>
 									</div>
+
+									<div class="account-tariff-expired">
+										<span>Внимание! Срок действия тарифа закончился</span>
+										<a href="#" class="pay-btn">Оплатить</a>
+									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Директ - LuxGram</title>
+	<title>Директ подтвердить - LuxGram</title>
 	<? include('inc/head.php'); ?>
 </head>
 <body>
@@ -67,51 +67,16 @@
 														<div class="user-info__activity"><p>Последнее действие <span>2</span> ч. назад</p></div>
 													</div>
 												</li>
-												<li class="flex flex-align">
-													<a href="#"></a>
-													<img src="assets/img/account_user2.png" alt=""/>
-													<div class="user-info">
-														<div class="user-info__name">frank_bovalev</div>
-														<div class="user-info__activity"><p>В сети <span>16</span> мин. назад</p></div>
-													</div>
-												</li>
-
-												<li class="flex flex-align">
-													<a href="#"></a>
-													<img src="assets/img/account_user3.png" alt=""/>
-													<div class="user-info">
-														<div class="user-info__name">Irina_furya</div>
-														<div class="user-info__activity status-new">
-															<div class="mes">Очень жду!</div><span>·</span><div class="hour-ago">2 ч. назад</div>
-														</div>
-													</div>
-												</li>
-												<li class="flex flex-align">
-													<a href="#"></a>
-													<img src="assets/img/account_user2.png" alt=""/>
-													<div class="user-info">
-														<div class="user-info__name">frank_bovalev</div>
-														<div class="user-info__activity"><p>Последнее действие <span>2</span> ч. назад</p></div>
-													</div>
-												</li>
-												<li class="flex flex-align">
-													<a href="#"></a>
-													<img src="assets/img/account_user3.png" alt=""/>
-													<div class="user-info">
-														<div class="user-info__name">Irina_furya</div>
-														<div class="user-info__activity"><p>Последнее действие <span>2</span> ч. назад</p></div>
-													</div>
-												</li>
 											</ul>
 											<div class="buttons-wrap flex flex-center">
-												<a href="#" class="bordered-btn">Загрузить еще...</a>
+												<a href="#" class="bordered-btn"><i class="fa fa-angle-left"></i> Вернуться назад</a>
 											</div>
 										</div>
 
 									</div>
 									<div class="col-xl-6 col-lg-6 col-md-12">
 
-										<div class="broadcast">
+										<div class="broadcast align-bottom">
 											<ul class="js-broadcast-messages-inbox">
 												<li class="in-mess">
 													<div class="mess-ico">
@@ -123,40 +88,14 @@
 													</div>
 													<div class="mess-time">12:00</div>
 												</li>
-												<li class="my-mess">
-													<div class="mess-body">
-														<div class="mess-txt">Привет! Хорошо</div>
+												<li class="confirm-broadcast-box-wrap pnone">
+													<div class="confirm-broadcast-box">
+														<button class="blue-btn confirm-btn">Подтвердить</button>
+														<button class="cancel-btn"><i class="fa fa-times"></i> Отменить</button>
 													</div>
-													<div class="mess-time">14:06</div>
 												</li>
-												<li class="in-mess re-mess">
-													<div class="mess-ico">
-														<img src="assets/img/account_user3.png" alt=""/>
-													</div>
-													<div class="mess-body">
-														<div class="user-name">Irina_furya</div>
-														<div class="mess-txt re-mess">
-															<div class="user-info">
-																<div class="user-info__ico">
-																	<img src="assets/img/account_user1.png" alt=""/>
-																</div>
-																<div class="user-info__name">frank_bovalev</div>
-															</div>
-															<div class="mess-in-box">Отличный ракурс! У меня есть идея как пройти...</div>
-															<img class="pic-in-box" src="assets/img/pic1.jpg" alt=""/>
-															<div class="mess-in-box">Ура!!! Сказочно))))</div>
-														</div>
-													</div>
-													<div class="mess-time">14:15</div>
-												</li>
-												<li class="my-mess">
-													<div class="mess-body">
-														<div class="mess-txt">Привет! Класс!</div>
-													</div>
-													<div class="mess-time">14:17</div>
-												</li>
-
 											</ul>
+
 											<div class="broadcast-box">
 												<form action="">
 													<div class="input-box">
